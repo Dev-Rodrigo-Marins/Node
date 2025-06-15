@@ -7,8 +7,17 @@ Este é um sistema simples de **galeria de relatos com upload de imagem**, onde 
 ---
 
 ## 📸 Demonstração
+home page
 
-<img src="public/demo.gif" alt="Demonstração da aplicação" width="600">
+<img src="ft1.jpg" alt="Demonstração da aplicação" width="600">
+
+galeria - usuario logado
+
+<img src="ft2.jpg" alt="Demonstração da aplicação" width="600">
+
+galeria - visitantes
+
+<img src="ft3.jpg" alt="Demonstração da aplicação" width="600">
 
 ---
 
