@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+  <h2><%= relato ? 'Editar' : 'Novo' %> Relato</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label class="form-label">Título</label>
+      <input name="titulo" class="form-control" value="<%= relato?.titulo || '' %>" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Descrição</label>
+      <textarea name="descricao" class="form-control" required><%= relato?.descricao || '' %></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Imagem</label>
+      <input type="file" name="arquivo" class="form-control" <%= relato ? '' : 'required' %>>
+    </div>
+    <button class="btn btn-primary">Salvar</button>
+    <a href="/relatos" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

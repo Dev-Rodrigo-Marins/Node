@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Relatos</h2>
+    <% if (user) { %>
+      <a href="/relatos/novo" class="btn btn-success">Novo Relato</a>
+    <% } %>
+  </div>
+  <div class="row">
+<% relatos.forEach(relato => { %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= relato.titulo %></h5>
+      <p class="card-text"><%= relato.descricao %></p>
+      <p class="card-text">
+        <small class="text-muted">Por <%= relato.nome %></small>
+      </p>
+      
+      <% if (relato.arquivo) { %>
+        <img src="/uploads/<%= relato.arquivo %>" class="img-fluid" style="max-width: 300px;">
+      <% } %>
+
+      <% if (user && user.id === relato.usuario_id) { %>
+        <!-- Mostrar botões somente se o usuário for o dono do relato -->
+        <a href="/relatos/editar/<%= relato.id %>" class="btn btn-sm btn-warning">Editar</a>
+        <a href="/relatos/deletar/<%= relato.id %>" class="btn btn-sm btn-danger">Deletar</a>
+      <% } %>
+    </div>
+  </div>
+<% }) %>
+</div>
+</div>
+
+<%- include('partials/footer') %>

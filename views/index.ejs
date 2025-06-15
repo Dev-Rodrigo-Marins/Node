@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5 text-center">
+  <h1>Bem-vindo à Galeria de Relatos</h1>
+  <p class="lead">Compartilhe imagens e histórias com o mundo.</p>
+
+  <% if (!user) { %>
+    <a href="/auth/google" class="btn btn-primary">Entrar com Google</a>
+  <% } else { %>
+    <a href="/relatos" class="btn btn-success">Ver Relatos</a>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>
